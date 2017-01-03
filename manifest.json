@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+
+  "name": "CV Automagi",
+  "description": "Denne utvidelsen hjelper deg å fylle felter automagisk i irriterende jobbsøker-portaler.",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "img/icon.png",
+    "default_popup": "popup.html",
+    "default_title": "Skru på CV automagi!"
+  },
+
+  "web_accessible_resources": [
+    "img/*.png",
+    "img/*.svg"
+  ],
+
+  "permissions": [
+    "activeTab"
+  ]
+}

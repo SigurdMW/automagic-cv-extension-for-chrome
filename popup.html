@@ -1,0 +1,55 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+  <head>
+    <title>CV Automagi</title>
+    <style>
+      body {
+        font-family: arial;
+        font-size: 100%;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 450px;
+        min-width: 320px;
+      }
+
+      h1 {
+        margin: 0 0 .5em 0;
+        font-size: 25px;
+      }
+
+      .activate-extension {}
+
+      span.status {
+        padding:.25em;
+        border-radius:3px;
+        color:#fff;
+      }
+
+      span.status.on {
+        background-color: green;
+      }
+      span.status.off {
+        background-color: red;
+      }
+
+      #status {
+        margin-bottom: 1em;
+      }
+    </style>
+    <script src="js/popup.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>CV Automagi</h1>
+      <div id="status"></div>
+      <button class="activate-extension" id="activate-extension">Slå på</button>
+    </div>
+  </body>
+</html>
