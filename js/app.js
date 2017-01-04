@@ -15,6 +15,20 @@ function turnOnAutoMagic(){
 		element.setAttribute('data-cv-element-id',id);
 		elementPos = element.getBoundingClientRect();
 
+		/*
+			function getOffsetLeft( elem )
+			{
+			    var offsetLeft = 0;
+			    do {
+			      if ( !isNaN( elem.offsetLeft ) )
+			      {
+			          offsetLeft += elem.offsetLeft;
+			      }
+			    } while( elem = elem.offsetParent );
+			    return offsetLeft;
+			}
+		*/
+
 	  var right = elementPos.right,
 	      top = elementPos.top;
 	  var ui = document.createElement("div");
