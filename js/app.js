@@ -27,6 +27,15 @@ function turnOnAutoMagic(){
 			    } while( elem = elem.offsetParent );
 			    return offsetLeft;
 			}
+			
+			// https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect
+			// http://stackoverflow.com/questions/16949642/getboundingclientrect-but-relative-to-the-entire-document
+			const rect = element.getBoundingClientRect()
+
+rect.left                   // (relative to viewport)
+rect.top                    // (relative to viewport)
+rect.left + window.scrollX  // (relative to document)
+rect.top + window.scrollY   // (relative to document)
 		*/
 
 	  var right = elementPos.right,
