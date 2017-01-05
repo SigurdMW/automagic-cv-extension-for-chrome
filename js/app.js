@@ -4,11 +4,19 @@ if(document.body.classList.contains("cv-automagic")){
 	turnOnAutoMagic();
 }
 
+function isHidden(el) {
+  var style = window.getComputedStyle(el);
+	return (style.display === 'none')
+}
+
 function turnOnAutoMagic(){
 	var inputs = document.querySelectorAll('input[type="text"], textarea');
 
 	for (var i = 0; i < inputs.length; i++){
-		prepareInput(inputs[i], i+1);
+		var el = inputs[i];
+		if(!isHidden(el)){
+			prepareInput(el, i+1);
+		}
 	}
 
 	function prepareInput(element, id){
@@ -16,30 +24,15 @@ function turnOnAutoMagic(){
 		elementPos = element.getBoundingClientRect();
 
 		/*
-			function getOffsetLeft( elem )
-			{
-			    var offsetLeft = 0;
-			    do {
-			      if ( !isNaN( elem.offsetLeft ) )
-			      {
-			          offsetLeft += elem.offsetLeft;
-			      }
-			    } while( elem = elem.offsetParent );
-			    return offsetLeft;
-			}
-			
-			// https://developer.mozilla.org/en-US/docs/Web/API/Element/getBoundingClientRect
-			// http://stackoverflow.com/questions/16949642/getboundingclientrect-but-relative-to-the-entire-document
-			const rect = element.getBoundingClientRect()
-
-rect.left                   // (relative to viewport)
-rect.top                    // (relative to viewport)
-rect.left + window.scrollX  // (relative to document)
-rect.top + window.scrollY   // (relative to document)
+		check if element is visible
+		function isHidden(el) {
+    	var style = window.getComputedStyle(el);
+    	return (style.display === 'none')
+		}
 		*/
 
 	  var right = elementPos.right,
-	      top = elementPos.top;
+	      top = elementPos.top + window.scrollY;
 	  var ui = document.createElement("div");
 	  ui.style.position = "absolute";
 	  ui.style.top = top + "px";
